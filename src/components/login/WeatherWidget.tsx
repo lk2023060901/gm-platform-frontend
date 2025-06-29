@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { SunOutlined, CloudOutlined, RainOutlined } from '@ant-design/icons';
+import { SunOutlined, CloudOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
 interface WeatherWidgetProps {
   className?: string;
@@ -22,7 +22,7 @@ export function WeatherWidget({ className }: WeatherWidgetProps) {
       case '多云':
         return <CloudOutlined className="text-gray-500" />;
       case '雨':
-        return <RainOutlined className="text-blue-500" />;
+        return <ThunderboltOutlined className="text-blue-500" />;
       default:
         return <SunOutlined className="text-yellow-500" />;
     }

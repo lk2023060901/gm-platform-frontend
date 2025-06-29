@@ -8,6 +8,7 @@ import { LoginForm } from '@/components/login/LoginForm';
 import { CarouselSection } from '@/components/login/CarouselSection';
 import { DevelopmentPlan } from '@/components/login/DevelopmentPlan';
 import { AnnouncementPanel } from '@/components/login/AnnouncementPanel';
+import { CalendarWidget } from '@/components/login/CalendarWidget';
 
 const { Header, Content, Footer } = Layout;
 
@@ -26,10 +27,17 @@ export default function LoginPage() {
 
       {/* 中间内容区域 */}
       <Content className="flex-1 flex items-center justify-center min-h-0 bg-gray-50 overflow-hidden">
-        <div className="flex w-full max-w-7xl h-full px-8 py-8 gap-6">
+        <div className="flex w-full max-w-[1600px] h-full px-6 py-8 gap-4">
           
-          {/* 左侧开发计划 */}
-          <div className="w-[400px] flex items-center justify-center">
+          {/* 左侧日历组件 */}
+          <div className="w-[540px] flex items-center justify-center">
+            <div className="w-full h-[600px]">
+              <CalendarWidget />
+            </div>
+          </div>
+
+          {/* 开发计划 */}
+          <div className="w-[350px] flex items-center justify-center">
             <div className="w-full bg-white rounded-lg border border-gray-200 shadow-sm p-6 h-[600px]">
               <DevelopmentPlan />
             </div>
