@@ -34,10 +34,9 @@ export function LoginForm() {
   };
 
   return (
-    <div className="w-full max-w-md">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-bold mb-3">欢迎登录</h1>
-        <p className="text-gray-500">游戏管理发布平台</p>
+    <div className="w-full max-w-md mx-auto">
+      <div className="text-center mb-8">
+        <h1 className="text-2xl font-bold text-black mb-6">游戏管理发布平台</h1>
       </div>
 
       <Tabs 
@@ -142,52 +141,52 @@ export function LoginForm() {
       </Tabs>
 
       {/* 第三方登录 */}
-      <Divider className="my-8">
-        <span className="text-gray-500 text-sm">第三方登录</span>
-      </Divider>
-
-      <div className="flex justify-center space-x-6 mb-8">
-        <Button
-          shape="circle"
-          size="large"
-          icon={<QqOutlined />}
-          className="w-12 h-12 border-blue-500 text-blue-500 hover:bg-blue-50"
-          onClick={() => handleThirdPartyLogin('qq')}
-        />
-        <Button
-          shape="circle"
-          size="large"
-          icon={<WechatOutlined />}
-          className="w-12 h-12 border-green-500 text-green-500 hover:bg-green-50"
-          onClick={() => handleThirdPartyLogin('wechat')}
-        />
-        <Button
-          shape="circle"
-          size="large"
-          icon={<GoogleOutlined />}
-          className="w-12 h-12 border-red-500 text-red-500 hover:bg-red-50"
-          onClick={() => handleThirdPartyLogin('google')}
-        />
-        <Button
-          shape="circle"
-          size="large"
-          icon={<GithubOutlined />}
-          className="w-12 h-12 border-gray-700 text-gray-700 hover:bg-gray-50"
-          onClick={() => handleThirdPartyLogin('github')}
-        />
+      <div className="mt-8 mb-6">
+        <div className="flex justify-center space-x-6">
+          <Button
+            shape="circle"
+            size="large"
+            icon={<QqOutlined />}
+            className="w-10 h-10 border-gray-400 text-gray-600 hover:text-gray-800 hover:border-gray-600"
+            onClick={() => handleThirdPartyLogin('qq')}
+          />
+          <Button
+            shape="circle"
+            size="large"
+            icon={<WechatOutlined />}
+            className="w-10 h-10 border-gray-400 text-gray-600 hover:text-gray-800 hover:border-gray-600"
+            onClick={() => handleThirdPartyLogin('wechat')}
+          />
+          <Button
+            shape="circle"
+            size="large"
+            icon={<GoogleOutlined />}
+            className="w-10 h-10 border-gray-400 text-gray-600 hover:text-gray-800 hover:border-gray-600"
+            onClick={() => handleThirdPartyLogin('google')}
+          />
+          <Button
+            shape="circle"
+            size="large"
+            icon={<GithubOutlined />}
+            className="w-10 h-10 border-gray-400 text-gray-600 hover:text-gray-800 hover:border-gray-600"
+            onClick={() => handleThirdPartyLogin('github')}
+          />
+        </div>
       </div>
 
       {/* 账户管理链接 */}
       <div className="text-center">
-        <div className="grid grid-cols-3 gap-2 text-sm">
-          <a href="#" className="text-blue-500 hover:text-blue-600 transition-all duration-200 py-3 px-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 text-center">
+        <div className="flex justify-center items-center space-x-1 text-sm text-gray-400">
+          <a href="#" className="hover:text-gray-600 transition-colors">
             注册账号
           </a>
-          <a href="#" className="text-blue-500 hover:text-blue-600 transition-all duration-200 py-3 px-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 text-center">
-            找回账号
+          <span>|</span>
+          <a href="#" className="hover:text-gray-600 transition-colors">
+            账号找回
           </a>
-          <a href="#" className="text-blue-500 hover:text-blue-600 transition-all duration-200 py-3 px-3 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 text-center">
-            忘记密码
+          <span>|</span>
+          <a href="#" className="hover:text-gray-600 transition-colors">
+            密码找回
           </a>
         </div>
       </div>

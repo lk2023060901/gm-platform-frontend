@@ -122,7 +122,7 @@ export function CarouselSection() {
 
   return (
     <div 
-      className="relative h-full flex items-center justify-center overflow-hidden"
+      className="relative w-full h-full flex items-center justify-center overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

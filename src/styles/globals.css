@@ -29,8 +29,71 @@ body {
 /* 覆盖 Ant Design 的一些默认样式 */
 .ant-layout {
   background: transparent !important;
+  min-height: auto !important;
 }
 
 .ant-layout-content {
   background: transparent !important;
+  min-height: auto !important;
+}
+
+.ant-layout-header {
+  padding: 0 !important;
+  line-height: normal !important;
+}
+
+.ant-layout-footer {
+  padding: 0 !important;
+}
+
+/* 确保页面不会出现滚动条 */
+html, body {
+  overflow-x: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* 自定义滚动条样式 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* 任务面板标签页样式 */
+.task-panel-tabs .ant-tabs-tab {
+  color: #000 !important;
+  font-weight: 500;
+}
+
+.task-panel-tabs .ant-tabs-tab.ant-tabs-tab-active {
+  color: #000 !important;
+}
+
+.task-panel-tabs .ant-tabs-ink-bar {
+  background: #1890ff !important;
+  height: 2px !important;
+}
+
+/* 边框工具类 */
+.border-l-3 {
+  border-left-width: 3px;
 }

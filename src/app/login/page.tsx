@@ -4,29 +4,50 @@ import React from 'react';
 import { Layout } from 'antd';
 import { TopBar } from '@/components/login/TopBar';
 import { BottomBar } from '@/components/login/BottomBar';
-import { CarouselSection } from '@/components/login/CarouselSection';
 import { LoginForm } from '@/components/login/LoginForm';
+import { CarouselSection } from '@/components/login/CarouselSection';
+import { DevelopmentPlan } from '@/components/login/DevelopmentPlan';
+import { AnnouncementPanel } from '@/components/login/AnnouncementPanel';
 
 const { Header, Content, Footer } = Layout;
 
 export default function LoginPage() {
   return (
-    <Layout className="min-h-screen">
-      {/* 顶部区域 */}
-      <Header className="h-16 px-6 flex items-center justify-end border-b">
+    <Layout className="h-screen flex flex-col overflow-hidden">
+      {/* 顶部区域 - 天气 + 主题切换 + 语言 */}
+      <Header className="h-auto p-0 border-b">
         <TopBar />
       </Header>
 
-      {/* 中间内容区域 */}
-      <Content className="flex-1 flex min-h-0">
-        {/* 左侧轮播区域 - 占据2/3宽度 */}
-        <div className="flex-[2] bg-gradient-to-br from-blue-500 to-purple-600 relative">
-          <CarouselSection />
-        </div>
+      {/* 轮播区域 - 铺满全屏 */}
+      <div className="w-full h-80 overflow-hidden">
+        <CarouselSection />
+      </div>
 
-        {/* 右侧登录区域 - 占据1/3宽度，最小宽度400px */}
-        <div className="flex-1 min-w-[400px] max-w-[500px] flex items-center justify-center px-8 py-12">
-          <LoginForm />
+      {/* 中间内容区域 */}
+      <Content className="flex-1 flex items-center justify-center min-h-0 bg-gray-50 overflow-hidden">
+        <div className="flex w-full max-w-7xl h-full px-8 py-8 gap-6">
+          
+          {/* 左侧开发计划 */}
+          <div className="w-[400px] flex items-center justify-center">
+            <div className="w-full bg-white rounded-lg border border-gray-200 shadow-sm p-6 h-[600px]">
+              <DevelopmentPlan />
+            </div>
+          </div>
+
+          {/* 中间登录区域 */}
+          <div className="w-[400px] flex items-center justify-center">
+            <div className="w-full bg-white rounded-lg border border-gray-200 shadow-sm p-8 h-[600px] flex flex-col justify-center">
+              <LoginForm />
+            </div>
+          </div>
+
+          {/* 右侧公告+快捷入口 */}
+          <div className="w-[350px] flex items-center justify-center">
+            <div className="w-full h-[600px]">
+              <AnnouncementPanel />
+            </div>
+          </div>
         </div>
       </Content>
 
