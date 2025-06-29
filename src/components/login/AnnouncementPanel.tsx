@@ -277,7 +277,7 @@ export function AnnouncementPanel({ className }: AnnouncementPanelProps) {
               key={announcement.id} 
               className="p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border-l-3 border-blue-400 h-[180px] flex flex-col"
             >
-              <div className="flex items-center justify-between mb-0.5 flex-shrink-0">
+              <div className="flex items-center justify-between flex-shrink-0">
                 <div className="flex items-center space-x-1.5 min-w-0">
                   {getAnnouncementIcon(announcement.type)}
                   <h4 className="font-medium text-sm text-gray-800 truncate">
@@ -302,36 +302,28 @@ export function AnnouncementPanel({ className }: AnnouncementPanelProps) {
   };
 
   const renderQuickLinks = () => {
-    // 重新计算6个工具的高度：
-    // 单个工具高度: padding(12*2) + 图标(20) + 标题(16) + 描述(16) + space-y-2(8) = 84px
-    // 3行工具: 84 * 3 = 252px
-    // gap间距: 12px * 2 = 24px
-    // 容器padding: pt-4 + pb-4 = 32px
-    // 总计: 252 + 24 + 32 = 308px
-    // 保险起见增加到330px
     const shouldScroll = quickLinks.length > 6;
-    const maxHeight = shouldScroll ? '330px' : '100%';
     
     return (
-      <div className={`px-4 pt-4 pb-4 h-full ${shouldScroll ? 'overflow-y-auto custom-scrollbar' : ''}`}
-           style={{ maxHeight: maxHeight }}>
-        <div className="grid grid-cols-2 gap-3">
+      <div className={`px-3 pt-3 pb-3 ${shouldScroll ? 'overflow-y-auto custom-scrollbar' : ''}`}
+           style={{ maxHeight: shouldScroll ? '400px' : 'none' }}>
+        <div className="grid grid-cols-2 gap-2.5">
           {quickLinks.map((link) => (
             <div 
               key={link.id}
               onClick={() => handleQuickLinkClick(link.url, link.title)}
-              className="p-3 bg-gray-50 rounded-lg hover:bg-blue-50 hover:border-blue-200 
+              className="p-2.5 bg-gray-50 rounded-lg hover:bg-blue-50 hover:border-blue-200 
                          border border-gray-200 cursor-pointer transition-all duration-200
-                         flex flex-col items-center text-center space-y-2"
+                         flex flex-col items-center text-center space-y-1.5"
             >
-              <div className="text-lg text-gray-600 hover:text-blue-600 transition-colors">
+              <div className="text-base text-gray-600 hover:text-blue-600 transition-colors">
                 {link.icon}
               </div>
               <div>
                 <h4 className="font-medium text-xs text-gray-800">
                   {link.title}
                 </h4>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-gray-500 mt-0.5">
                   {link.description}
                 </p>
               </div>
