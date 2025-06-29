@@ -1,0 +1,24 @@
+{
+  "common": {
+    "theme": "Theme",
+    "language": "Language",
+    "chinese": "中文",
+    "english": "English"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email Login",
+    "phone": "Phone Login",
+    "phonePlaceholder": "Enter phone number",
+    "codePlaceholder": "Enter verification code",
+    "sendCode": "Send Code",
+    "register": "Register",
+    "forgotAccount": "Forgot Account",
+    "forgotPassword": "Forgot Password"
+  },
+  "footer": {
+    "icp": "ICP Registration",
+    "company": "Company Info",
+    "legal": "Legal Terms"
+  }
+}
